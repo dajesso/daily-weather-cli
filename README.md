@@ -59,7 +59,7 @@ This software uses the MIT license.
 - Windows, Linux, FreeBSD, MacOS
 - Internet Access
 
-MIT License
+# MIT License
 
 Copyright (c) 2024 Jessica Amy
 
