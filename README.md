@@ -46,7 +46,7 @@ What you can't do
 
 BSD License (BSD 3-Clause)
 
-The following above applies to this license with the exception of using trademarks and you can place warrenty on the software license
+The following bellow applies to this license with the exception of using trademarks and you can place warrenty on the software license
 
 # Disclaimer
 
