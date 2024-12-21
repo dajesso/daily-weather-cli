@@ -12,7 +12,7 @@ First open command prompt then download the source code from the github extract 
 - pip install color50
 - pip install pandas
 
-This application won't work without this packages keep in mind anything typed into this program might be logged or sent to a third party api so don't type in anything sensitive.
+This application won't work without these packages keep in mind anything typed into this program might be logged or sent to a third party api so don't type in anything sensitive.
 
 
 Type in python the path to dailyweathers main.py file then press enter it will ask you for a filename you can choose anything if you want to add more weather items later that is fine now it should ask you for your city once you are done type quit
