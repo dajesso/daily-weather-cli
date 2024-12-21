@@ -19,4 +19,4 @@ while city.lower() != "quit":
 
 # This reads the weather from a file
 
-read = main_methods.read_weather(filename)
+read = main_methods.read_weather(filename + ".csv")

@@ -48,10 +48,9 @@ BSD License (BSD 3-Clause)
 
 The following bellow applies to this license with the exception of using trademarks and you can place warrenty on the software license
 
-# Disclaimer
+# A small warning about apis and third party packages
 
-Just a small disclaimer the developer of this python app isn't responsible for data shared using the api its best to assume sensitive data will be seen or logged. I'm not responsible for your actions or damages caused by this software use at your own risk.
-This software uses the MIT license.
+This program uses a weather API from the python weather package it may log and store sensitive data we aren't responsible for this. third party packages can also do malicious things but this package won't its genuine and trusted in theory python packages can have malware and do bad things but isn't too common yet the good thing is packages that are malcious get removed pretty quickly since its open source people can check and remove nasty stuff. If you're a developer and looking for a package check [pypy.com](https://pypi.org/)
 
 # System Requirements
 - A modern computer with at least 512mb ram
