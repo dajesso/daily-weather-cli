@@ -6,6 +6,13 @@ import csv
 from color50 import rgb, constants
 import pandas as panda
 
+from datetime import date, datetime
+
+import pytz
+
+
+
+
 # we now compare the temp since we use it twice i put it into a function
 
 
@@ -42,6 +49,9 @@ class retrive_weather():
 
 
     async def get_weather(self, city, filename) -> None:
+        # set the day and time
+        current_date = datetime.now()
+        formatted_date = current_date.strftime('%d/%m/%y %H:%M:%S')
         """
         A async function that gets the weather for the city entered and a filename to write that data too.
 
@@ -56,9 +66,12 @@ class retrive_weather():
                 weather = await client.get(city)
                 #  returns the current day's forecast temperature (int)
                 print("The weather in csv format")
-                print("Todays Weather, Country")
+                print("Temperature, Country, Date")
+                
 
-                temp_string = str(weather.temperature) + "," + str(weather.country)
+                temp_string = str(weather.temperature) + "," + str(city) + "," +  formatted_date
+
+                
 
                 # compares the temp and checks for a csv header file not to break the code
 
@@ -75,7 +88,8 @@ class retrive_weather():
 
 
                     with open(filename, 'a') as csvfile:
-                        data = [[weather.temperature, weather.country]]
+
+                        data = [[weather.temperature, city, formatted_date]]
                         writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
                         writer.writerows(data)
@@ -88,7 +102,7 @@ class retrive_weather():
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
 
-                        data = [['Todays Weather', 'Country'], [weather.temperature, weather.country]]
+                        data = [['Temperature', 'Country', 'Date'], [weather.temperature, city, formatted_date]]
 
                         writer.writerows(data)
 
@@ -121,9 +135,10 @@ class read_weather():
                 csvfile = csv.DictReader(file)
                 for data in csvfile:
                     # we display the csv file entries the same as in the csv file.
-                    compare_temp(int(data["Todays Weather"]), data["Todays Weather"] + "," + data["Country"])
+                    compare_temp(int(data["Temperature"]), data["Temperature"] + "," + data["Country"] + "," + str(data["Date"]))
 
-        except Exception as error:
-            print(f"An error occured: {error}")
-
+        #except Exception as error:
+            #print(f"An error occured: {error}")
+        except IOError as error:
+            print(IOError)
 
