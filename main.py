@@ -23,19 +23,24 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         # create a empty string for the loop
         city = ""
-        filename = input("Please input a filename to save the weather: ")
+        try:
+            filename = input("Please input a filename to save the weather: ")
 
-        while city.lower() != "close":
-            if city.lower() == "close":
-                break
-            city = input("Please type your city or close: ")
-             # retrives the weather and writes it to a file
-            weather_in = main_methods.retrive_weather()
-            asyncio.run(weather_in.get_weather(city, filename + ".csv"))
+            while city.lower() != "close":
+                city = input("Please type your city or close to exit: ")
+                # retrives the weather and writes it to a file
+                weather_in = main_methods.retrive_weather()
+                asyncio.run(weather_in.get_weather(city, filename + ".csv"))
 
-            # This reads the weather from a file
+                # This reads the weather from a file
 
-            read = main_methods.read_weather(filename + ".csv")
+                read = main_methods.read_weather(filename + ".csv")
+        # this prevents an exception from occuring when termiating the application
+
+        except KeyboardInterrupt:
+            print("Exiting now")
+        except Exception as error:
+            print(f"An error occured: {error}")
 
     else:
         # we use the arguments for our project
