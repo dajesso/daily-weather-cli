@@ -137,8 +137,8 @@ class read_weather():
                     # we display the csv file entries the same as in the csv file.
                     compare_temp(int(data["Temperature"]), data["Temperature"] + "," + data["Country"] + "," + str(data["Date"]))
 
-        #except Exception as error:
-            #print(f"An error occured: {error}")
+        except Exception as error:
+            print(f"An error occured: {error}")
         except IOError as error:
             print(IOError)
 
