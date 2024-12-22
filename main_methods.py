@@ -69,7 +69,7 @@ class retrive_weather():
                 print("Temperature, Country, Date")
                 
 
-                temp_string = str(weather.temperature) + "," + str(city) + "," +  formatted_date
+                temp_string = str(weather.temperature) + "," + str(weather.country) + "," +  formatted_date
 
                 
 
@@ -89,7 +89,7 @@ class retrive_weather():
 
                     with open(filename, 'a') as csvfile:
 
-                        data = [[weather.temperature, city, formatted_date]]
+                        data = [[weather.temperature, weather.country, formatted_date]]
                         writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
                         writer.writerows(data)
@@ -102,7 +102,7 @@ class retrive_weather():
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
 
-                        data = [['Temperature', 'Country', 'Date'], [weather.temperature, city, formatted_date]]
+                        data = [['Temperature', 'Country', 'Date'], [weather.temperature, weather.country, formatted_date]]
 
                         writer.writerows(data)
 
