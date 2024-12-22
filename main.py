@@ -25,8 +25,10 @@ if __name__ == "__main__":
         city = ""
         filename = input("Please input a filename to save the weather: ")
 
-        while city.lower() != "quit":
-            city = input("Please type your city or quit to exit: ")
+        while city.lower() != "close":
+            if city.lower() == "close":
+                break
+            city = input("Please type your city or close: ")
              # retrives the weather and writes it to a file
             weather_in = main_methods.retrive_weather()
             asyncio.run(weather_in.get_weather(city, filename + ".csv"))
