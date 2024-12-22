@@ -14,8 +14,22 @@ First open command prompt then download the source code from the github extract 
 
 This application won't work without these packages keep in mind anything typed into this program might be logged or sent to a third party api so don't type in anything sensitive.
 
+# Using the application
 
-Type in python the path to dailyweathers main.py file then press enter it will ask you for a filename you can choose anything if you want to add more weather items later that is fine now it should ask you for your city once you are done type quit
+There are currently two ways to run this application first being no with arugments the second being with two arugments.
+
+First Way
+
+Type in python the path to dailyweathers main.py file example python  C:/path/to/dailyweather.py  then press enter it will ask you for a filename you can choose anything if you want to add more weather items later that is fine now it should ask you for your city once you are done type close
+
+Second Way
+Instead of being prompted to run the application you can pass arugments into the program
+
+Type in python and then the path to the dailyweeathers main function after that you type --city city_name and --file the_file_name it doesn't matter which order it is used in spaces don't work so you will need to use escape characters. example
+
+python C:/path/to/dailyweather.py --file jesso --city melbourne
+
+
 
 ## Licences and legal disclaimer
 
