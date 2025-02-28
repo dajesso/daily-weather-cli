@@ -14,6 +14,23 @@ First open command prompt then download the source code from the github extract 
 
 This application won't work without these packages keep in mind anything typed into this program might be logged or sent to a third party api so don't type in anything sensitive.
 
+# Running the program in a virtual enviroment.
+
+First open command prompt and type the following. We will need python3-pip for this to work.
+
+- sudo apt-get install python3-pip
+- python3 -m venv .venv
+
+This will create a virtual enviroment which will not effect your main installation of python.
+
+- source .venv/bin/activate
+
+This will activate the virtual enviroment now we install the requirements.
+
+- pip3 install -r requirements.txt
+
+This will install all the requirements now you can run the python program by typing python3 main.py
+
 # Using the application
 
 There are currently two ways to run this application first being no with arugments the second being with two arugments.
